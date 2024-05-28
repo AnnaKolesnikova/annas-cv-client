@@ -1,0 +1,7 @@
+<div>Hey, there!</div>
+
+@for (cv of cv(); track cv.fullName) {
+<div>I'm {{ cv.fullName }}</div>
+<mat-divider></mat-divider>
+<div>{{ cv.title }}</div>
+}
