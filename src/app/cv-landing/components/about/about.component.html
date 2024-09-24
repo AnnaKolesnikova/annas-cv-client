@@ -1,0 +1,56 @@
+@if(loading()) {
+<div class="loading">
+  <mat-spinner></mat-spinner>
+</div>
+} @else {
+<div class="flex flex-col items-center content-center py-6">
+  <!-- container -->
+  @for (cv of data(); track cv.fullName) {
+
+  <div
+    class="flex flex-row items-center pt-1 px-2 border rounded-lg border-gray-300 bg-white"
+  >
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Available"
+      fontIcon="circle"
+      class="mt-1 text-xs text-green-400"
+    ></mat-icon>
+    <div class="pb-1 text-sm">Available for Work</div>
+  </div>
+  <div class="mt-4 mb-2 text-3xl font-bold">{{ cv.fullName }}</div>
+  <div class="mb-2 text-md text-gray-500">{{ cv.title }}</div>
+  <div class="flex flex-row my-4">
+    <button mat-flat-button class="mx-2">Send email</button>
+    <button mat-flat-button color="primary" class="mx-2">Download CV</button>
+  </div>
+
+  <div class="flex flex-row my-4">
+    <mat-card>
+      <img
+        mat-card-image
+        src="../../../../assets/images/istockphoto-903044512-612x612 copy.jpg"
+      />
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>About:</mat-card-title>
+        <mat-card-subtitle>{{ cv.about }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Soft skills:</p>
+        <p>{{ cv.softSkills }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- <div>
+        <div class="text-lg font-bold">About:</div>
+        <div class="pb-4">{{ cv.about }}</div>
+        <mat-divider></mat-divider>
+        <div class="pt-4 text-md">Soft skills:</div>
+        <div>{{ cv.softSkills }}</div>
+      </div> -->
+  </div>
+  }
+</div>
+}
