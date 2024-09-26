@@ -1,0 +1,16 @@
+<div class="timeline">
+  @for(job of jobs; track job.dates) {
+  <div class="timeline-container">
+    <div class="timeline-content">
+      <h3>{{ job.dates }}</h3>
+      <h4>{{ job.companyName }}</h4>
+      <div>{{ job.location }}</div>
+      <div>{{ job.title }}</div>
+      @for(project of job.projects; track project.description) {
+      <div class="font-bold">Description:</div>
+      <div>{{ project.description }}</div>
+      }
+    </div>
+  </div>
+  }
+</div>

@@ -16,7 +16,7 @@ interface IContactDetails {
   location: string;
 }
 
-interface IJob {
+export interface IJob {
   dates: string;
   title: string;
   companyName: string;
@@ -36,4 +36,8 @@ interface IEducation {
   department: string;
   university: string;
   location: string;
+}
+
+export interface IResponse {
+  cvs: ICv[];
 }

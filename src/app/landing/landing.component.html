@@ -1,0 +1,10 @@
+@if(loading()) {
+<div class="loading">
+  <mat-spinner></mat-spinner>
+</div>
+} @else {
+<div class="container">
+  <app-summary [cvs]="data()"></app-summary>
+  <app-timeline [jobs]="workExperience()"></app-timeline>
+</div>
+}
