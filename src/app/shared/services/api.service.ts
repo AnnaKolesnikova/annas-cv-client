@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ICv } from '../../cv-landing/types/cv.interface';
+import { ICv } from '../../landing/types/cv.interface';
 
 @Injectable({
   providedIn: 'root',

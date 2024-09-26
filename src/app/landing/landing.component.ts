@@ -2,12 +2,10 @@ import { Component } from '@angular/core';
 import { AboutComponent } from './components/about/about.component';
 
 @Component({
-  selector: 'app-cv-landing',
+  selector: 'app-landing',
   standalone: true,
   imports: [AboutComponent],
-  templateUrl: './cv-landing.component.html',
-  styleUrl: './cv-landing.component.scss'
+  templateUrl: './landing.component.html',
+  styleUrl: './landing.component.scss',
 })
-export class CvLandingComponent {
-
-}
+export class LandingComponent {}

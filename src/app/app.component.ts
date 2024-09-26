@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { CvLandingComponent } from './cv-landing/cv-landing.component';
+import { LandingComponent } from './landing/landing.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, CvLandingComponent],
+  imports: [CommonModule, RouterOutlet, LandingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

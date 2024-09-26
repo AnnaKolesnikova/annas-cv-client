@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CvLandingComponent } from './cv-landing.component';
+import { LandingComponent } from './landing.component';
 
 describe('CvLandingComponent', () => {
-  let component: CvLandingComponent;
-  let fixture: ComponentFixture<CvLandingComponent>;
+  let component: LandingComponent;
+  let fixture: ComponentFixture<LandingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CvLandingComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(CvLandingComponent);
+      imports: [LandingComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(LandingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

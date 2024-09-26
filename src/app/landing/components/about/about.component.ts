@@ -20,7 +20,7 @@ export class AboutComponent {
   // ngOnInit(): void {
   //   this.dataService.getCV();
   // }
-  // Инициализация сигнала для хранения данных
+
   data = signal<ICv[]>([]);
   loading = signal<boolean>(true);
   error = signal<string | null>(null);

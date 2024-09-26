@@ -22,8 +22,6 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getData(): Observable<any> {
-    return this.http.get(this.jsonUrl).pipe(
-      delay(2000) // Задержка на 2 секунды
-    );
+    return this.http.get(this.jsonUrl).pipe(delay(2000));
   }
 }
