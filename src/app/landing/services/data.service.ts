@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { ICv } from '../types/cv.interface';
-import { delay, Observable } from 'rxjs';
+import { ICv, IJob, IResponse } from '../types/cv.interface';
+import { delay, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,10 +18,26 @@ export class DataService {
   //   });
   // }
   private jsonUrl = 'assets/db.json';
+  private dataSignal = signal<ICv[]>([]); //all data
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.getData();
+  }
 
-  getData(): Observable<any> {
-    return this.http.get(this.jsonUrl).pipe(delay(2000));
+  private getData(): void {
+    this.http
+      .get<IResponse>(this.jsonUrl)
+      .pipe(delay(2000))
+      .subscribe((response: IResponse) => {
+        this.dataSignal.set(response.cvs);
+      });
+  }
+
+  get data() {
+    return this.dataSignal;
+  }
+
+  getWorkExperience(): IJob[] {
+    return this.dataSignal().flatMap((cv) => cv.workExperience);
   }
 }

@@ -8,13 +8,13 @@
         "phone": "+48 571 281 322",
         "location": "Wrocław, Poland"
       },
-      "about": "5+ years in commercial software development with hands-on expertise in HTML, CSS, JavaScript. Including 3+ years working with Angular 2+ and Typescript, designing, implementing the solutions in difficult and complex systems, testing and deploying cross-browser, user-friendly web applications.",
+      "about": "Front-end developer with over 5 years of experience in developing web applications, specializing in Angular 2+ and TypeScript. Proficient in designing, implementing, and deploying responsive and scalable web solutions. Skilled in collaborating with cross-functional teams to deliver high-quality software on time.",
       "softSkills": "Responsible, self-motivated, reliable, team-player, independent, communicative",
       "workExperience": [
         {
           "dates": "March 2022 - March 2023",
           "title": "Frontend Developer",
-          "company": "Coherent Solutions Poland",
+          "companyName": "Coherent Solutions Poland",
           "location": "Wrocław, Poland",
           "projects": [
             {
@@ -33,7 +33,7 @@
         {
           "dates": "May 2019 - March 2022",
           "title": "Frontend Developer",
-          "company": "ISsoft",
+          "companyName": "ISsoft",
           "location": "Minsk, Belarus",
           "projects": [
             {
@@ -48,7 +48,7 @@
               "responsibilities": []
             },
             {
-              "description": "",
+              "description": "Project/client - a leading innovator of Multiple Listing Service (MLS) technology. Our team was maintaining a system for providing information about apartments, houses and land for brokers and realtor agencies in the US.",
               "technologies": [
                 "Angular 13",
                 "Angular Material",
@@ -63,7 +63,7 @@
         {
           "dates": "June 2017 - May 2019",
           "title": "Junior Frontend Developer",
-          "company": "Invatechs",
+          "companyName": "Invatechs",
           "location": "Minsk, Belarus",
           "technologies": [],
           "description": "",

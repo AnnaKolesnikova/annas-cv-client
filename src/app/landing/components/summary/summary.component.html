@@ -1,12 +1,5 @@
-@if(loading()) {
-<div class="loading">
-  <mat-spinner></mat-spinner>
-</div>
-} @else {
 <div class="flex flex-col items-center content-center py-6">
-  <!-- container -->
-  @for (cv of data(); track cv.fullName) {
-
+  @for (cv of cvs; track cv.fullName) {
   <div
     class="flex flex-row items-center pt-1 px-2 border rounded-lg border-gray-300 bg-white"
   >
@@ -21,20 +14,36 @@
   <div class="mt-4 mb-2 text-3xl font-bold">{{ cv.fullName }}</div>
   <div class="mb-2 text-md text-gray-500">{{ cv.title }}</div>
   <div class="flex flex-row my-4">
-    <button mat-flat-button class="mx-2">Send email</button>
-    <button mat-flat-button color="primary" class="mx-2">Download CV</button>
+    <button mat-fab extended color="primary" class="mx-2">
+      <mat-icon>email</mat-icon>
+      Send email
+    </button>
+    <button mat-fab extended>
+      <mat-icon>download</mat-icon>
+      <a
+        href="./assets/Ilinchik Anna CV.pdf"
+        class="btn"
+        target="_blank"
+        download="Ilinchik Anna CV.pdf"
+      >
+        Download CV
+      </a>
+    </button>
+    <div class="example-flex-container">
+      <div class="example-button-container"></div>
+    </div>
   </div>
 
   <div class="flex flex-row my-4">
-    <mat-card>
+    <mat-card class="flex justify-center">
       <img
         mat-card-image
-        src="../../../../assets/images/istockphoto-903044512-612x612 copy.jpg"
+        src="./assets/images/istockphoto-903044512-612x612 copy.jpg"
       />
     </mat-card>
     <mat-card>
       <mat-card-header>
-        <mat-card-title>About:</mat-card-title>
+        <mat-card-title>Summary:</mat-card-title>
         <mat-card-subtitle>{{ cv.about }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
@@ -42,15 +51,6 @@
         <p>{{ cv.softSkills }}</p>
       </mat-card-content>
     </mat-card>
-
-    <!-- <div>
-        <div class="text-lg font-bold">About:</div>
-        <div class="pb-4">{{ cv.about }}</div>
-        <mat-divider></mat-divider>
-        <div class="pt-4 text-md">Soft skills:</div>
-        <div>{{ cv.softSkills }}</div>
-      </div> -->
   </div>
   }
 </div>
-}
