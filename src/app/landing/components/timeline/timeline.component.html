@@ -3,9 +3,9 @@
   <div class="timeline-container">
     <div class="timeline-content">
       <h3>{{ job.dates }}</h3>
-      <h4>{{ job.companyName }}</h4>
+      <h2>{{ job.companyName }}</h2>
       <div>{{ job.location }}</div>
-      <div>{{ job.title }}</div>
+      <h4>{{ job.title }}</h4>
       @for(project of job.projects; track project.description) {
       <div class="font-bold">Description:</div>
       <div>{{ project.description }}</div>

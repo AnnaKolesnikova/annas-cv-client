@@ -8,7 +8,7 @@
         "phone": "+48 571 281 322",
         "location": "Wrocław, Poland"
       },
-      "about": "Front-end developer with over 5 years of experience in developing web applications, specializing in Angular 2+ and TypeScript. Proficient in designing, implementing, and deploying responsive and scalable web solutions. Skilled in collaborating with cross-functional teams to deliver high-quality software on time.",
+      "summary": "Front-end developer with over 5 years of experience in developing web applications, specializing in Angular 2+ and TypeScript. Proficient in designing, implementing, and deploying responsive and scalable web solutions. Skilled in collaborating with cross-functional teams to deliver high-quality software on time.",
       "softSkills": "Responsible, self-motivated, reliable, team-player, independent, communicative",
       "workExperience": [
         {
@@ -37,7 +37,7 @@
           "location": "Minsk, Belarus",
           "projects": [
             {
-              "description": "An American clothing and home decor retaiter. The project was based on maintaining and updating the website and Admin Platform for thousands of storefronts on the base of hybrus (SAP) platform",
+              "description": "An American clothing and home decor retailer. The project was based on maintaining and updating the website and Admin Platform for thousands of storefronts on the base of hybrus (SAP) platform",
               "technologies": [
                 "Angular 13",
                 "Angular Material",
@@ -65,16 +65,26 @@
           "title": "Junior Frontend Developer",
           "companyName": "Invatechs",
           "location": "Minsk, Belarus",
-          "technologies": [],
-          "description": "",
-          "responsibilities": []
+          "projects": [
+            {
+              "description": "Started as an intern, and after a few months, transitioned to a Junior Frontend Developer role.",
+              "technologies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "React",
+                "Wordpress"
+              ],
+              "responsibilities": []
+            }
+          ]
         }
       ],
       "education": {
         "dates": "2008-2013",
         "faculty": "Civil Engineering",
         "department": "Economics",
-        "university": "Belarussian National Technical University",
+        "university": "Belarusian National Technical University",
         "location": "Minsk, Belarus"
       },
       "skills": [],

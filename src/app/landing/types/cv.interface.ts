@@ -2,7 +2,7 @@ export interface ICv {
   fullName: string;
   title: string;
   contactDetails: IContactDetails;
-  about: string;
+  summary: string;
   softSkills: string;
   workExperience: IJob[];
   education: IEducation;

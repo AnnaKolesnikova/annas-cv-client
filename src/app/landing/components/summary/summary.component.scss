@@ -1,0 +1,11 @@
+.summary-container {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+  .summary-container {
+    flex-direction: column;
+  }
+}
