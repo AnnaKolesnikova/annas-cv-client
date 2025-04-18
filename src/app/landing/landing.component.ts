@@ -4,6 +4,7 @@ import { DataService } from './services/data.service';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { MaterialModules } from '../shared/modules/material.module';
 import { NavComponent } from './components/nav/nav.component';
+import { IJob, IPersonalDetails, ISummary } from './types/cv.interface';
 
 @Component({
   selector: 'app-landing',
@@ -18,28 +19,32 @@ import { NavComponent } from './components/nav/nav.component';
   styleUrl: './landing.component.scss',
 })
 export class LandingComponent {
+  personalData!: IPersonalDetails;
+  summary!: ISummary;
+  workExperience!: IJob[];
+
   loading = signal<boolean>(true);
 
-  dataSignal = this.dataService.data;
-  data = computed(() => this.dataSignal());
+  // dataSignal = this.dataService.data;
+  // data = computed(() => this.dataSignal());
 
-  personalDataSignal = this.dataService.getPersonalData;
-  personalData = computed(() => this.personalDataSignal());
+  data = this.dataService.data;
 
-  summarySignal = this.dataService.getSummary;
-  summary = computed(() => this.summarySignal());
-
-  workExperienceSignal = this.dataService.getWorkExperience;
-  workExperience = computed(() => this.workExperienceSignal());
+  // personalData = this.dataService.getPersonalData();
+  // summary = this.dataService.getSummary();
+  // workExperience = this.dataService.getWorkExperience();
 
   constructor(private dataService: DataService) {
-    effect(
-      () => {
-        if (this.dataSignal().length > 0) {
-          this.loading.set(false);
-        }
-      },
-      { allowSignalWrites: true }
-    );
+    effect(() => this.initData(), { allowSignalWrites: true });
+  }
+
+  private initData() {
+    if (this.data().length > 0) {
+      const cv = this.data()[0];
+      this.personalData = cv.personalDetails;
+      this.summary = cv.summary;
+      this.workExperience = cv.workExperience;
+      this.loading.set(false);
+    }
   }
 }

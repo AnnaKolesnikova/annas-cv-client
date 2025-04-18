@@ -10,5 +10,5 @@ import { ICv, ISummary } from '../../types/cv.interface';
   styleUrl: './summary.component.scss',
 })
 export class SummaryComponent {
-  @Input() summaries: ISummary[] = [];
+  @Input() summary?: ISummary;
 }

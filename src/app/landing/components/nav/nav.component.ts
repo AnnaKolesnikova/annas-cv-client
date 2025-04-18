@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MaterialModules } from '../../../shared/modules/material.module';
-import { ICv, IPersonalDetails } from '../../types/cv.interface';
+import { IPersonalDetails } from '../../types/cv.interface';
 
 @Component({
   selector: 'app-nav',
@@ -10,5 +10,5 @@ import { ICv, IPersonalDetails } from '../../types/cv.interface';
   styleUrl: './nav.component.scss',
 })
 export class NavComponent {
-  @Input() personalDetails: IPersonalDetails[] = [];
+  @Input() personalData?: IPersonalDetails;
 }

@@ -4,10 +4,10 @@
 </div>
 } @else {
 <div class="responsive-wrapper">
-  <app-nav [personalDetails]="personalData()"></app-nav>
+  <app-nav [personalData]="personalData"></app-nav>
   <div class="experience-wrapper">
-    <app-summary [summaries]="summary()"></app-summary>
-    <app-timeline [jobs]="workExperience()"></app-timeline>
+    <app-summary [summary]="summary"></app-summary>
+    <app-timeline [jobs]="workExperience"></app-timeline>
   </div>
 </div>
 }
