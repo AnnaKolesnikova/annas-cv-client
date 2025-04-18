@@ -1,0 +1,36 @@
+<div class="nav-wrapper main-text-color">
+  @for (details of personalDetails; track details.fullName) {
+  <div class="place-items-start">
+    <div class="mb-2 text-4xl font-bold main-text-color">
+      {{ details.fullName }}
+    </div>
+    <div class="mb-2 text-lg main-text-color">{{ details.title }}</div>
+  </div>
+
+  <div class="flex flex-row my-4">
+    <button mat-fab extended color="primary" class="mx-2">
+      <mat-icon>email</mat-icon>
+      Send email
+    </button>
+    <button mat-fab extended>
+      <mat-icon>download</mat-icon>
+      <a
+        href="./assets/Ilinchik Anna CV.pdf"
+        class="btn"
+        target="_blank"
+        download="Ilinchik Anna CV.pdf"
+      >
+        Download CV
+      </a>
+    </button>
+    <div class="example-flex-container">
+      <div class="example-button-container"></div>
+    </div>
+  </div>
+  }
+  <ul>
+    <li>About</li>
+    <li>Experience</li>
+    <li>Projects</li>
+  </ul>
+</div>

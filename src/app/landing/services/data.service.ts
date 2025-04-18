@@ -1,6 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { ICv, IJob, IResponse } from '../types/cv.interface';
+import {
+  ICv,
+  IJob,
+  IResponse,
+  IPersonalDetails,
+  ISummary,
+} from '../types/cv.interface';
 import { delay, map, Observable } from 'rxjs';
 
 @Injectable({
@@ -35,6 +41,14 @@ export class DataService {
 
   get data() {
     return this.dataSignal;
+  }
+
+  getPersonalData(): IPersonalDetails[] {
+    return this.dataSignal().flatMap((cv) => cv.personalDetails);
+  }
+
+  getSummary(): ISummary[] {
+    return this.dataSignal().flatMap((cv) => cv.summary);
   }
 
   getWorkExperience(): IJob[] {

@@ -1,15 +1,17 @@
 {
   "cvs": [
     {
-      "fullName": "Anna Ilinchik",
-      "title": "Frontend Developer",
-      "contactDetails": {
+      "personalDetails": {
+        "fullName": "Anna Ilinchik",
+        "title": "Frontend Developer",
         "email": "anna.ilyinchik@gmail.com",
         "phone": "+48 571 281 322",
         "location": "Wrocław, Poland"
       },
-      "summary": "Front-end developer with over 5 years of experience in developing web applications, specializing in Angular 2+ and TypeScript. Proficient in designing, implementing, and deploying responsive and scalable web solutions. Skilled in collaborating with cross-functional teams to deliver high-quality software on time.",
-      "softSkills": "Responsible, self-motivated, reliable, team-player, independent, communicative",
+      "summary": {
+        "description": "Front-end developer with over 5 years of experience in developing web applications, specializing in Angular 2+ and TypeScript. Proficient in designing, implementing, and deploying responsive and scalable web solutions. Skilled in collaborating with cross-functional teams to deliver high-quality software on time.",
+        "softSkills": "Responsible, self-motivated, reliable, team-player, independent, communicative"
+      },
       "workExperience": [
         {
           "dates": "March 2022 - March 2023",
