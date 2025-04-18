@@ -1,0 +1,84 @@
+{
+  "cvs": [
+    {
+      "fullName": "Anna Ilinchik",
+      "title": "Frontend Developer",
+      "contactDetails": {
+        "email": "anna.ilyinchik@gmail.com",
+        "phone": "+48 571 281 322",
+        "location": "Wrocław, Poland"
+      },
+      "about": "Front-end developer with over 5 years of experience in developing web applications, specializing in Angular 2+ and TypeScript. Proficient in designing, implementing, and deploying responsive and scalable web solutions. Skilled in collaborating with cross-functional teams to deliver high-quality software on time.",
+      "softSkills": "Responsible, self-motivated, reliable, team-player, independent, communicative",
+      "workExperience": [
+        {
+          "dates": "March 2022 - March 2023",
+          "title": "Frontend Developer",
+          "companyName": "Coherent Solutions Poland",
+          "location": "Wrocław, Poland",
+          "projects": [
+            {
+              "description": "Client's flagship product #1 enterprise backup and recovery solution that covers workloads across various environments such as physical and cloud. The goal of the project was to migrate from the JavaGUI app to a web",
+              "technologies": [
+                "Angular 13",
+                "Angular Material",
+                "RxJS",
+                "SCSS",
+                "REST Api"
+              ],
+              "responsibilities": []
+            }
+          ]
+        },
+        {
+          "dates": "May 2019 - March 2022",
+          "title": "Frontend Developer",
+          "companyName": "ISsoft",
+          "location": "Minsk, Belarus",
+          "projects": [
+            {
+              "description": "An American clothing and home decor retaiter. The project was based on maintaining and updating the website and Admin Platform for thousands of storefronts on the base of hybrus (SAP) platform",
+              "technologies": [
+                "Angular 13",
+                "Angular Material",
+                "RxJS",
+                "SCSS",
+                "REST Api"
+              ],
+              "responsibilities": []
+            },
+            {
+              "description": "Project/client - a leading innovator of Multiple Listing Service (MLS) technology. Our team was maintaining a system for providing information about apartments, houses and land for brokers and realtor agencies in the US.",
+              "technologies": [
+                "Angular 13",
+                "Angular Material",
+                "RxJS",
+                "SCSS",
+                "REST Api"
+              ],
+              "responsibilities": []
+            }
+          ]
+        },
+        {
+          "dates": "June 2017 - May 2019",
+          "title": "Junior Frontend Developer",
+          "companyName": "Invatechs",
+          "location": "Minsk, Belarus",
+          "technologies": [],
+          "description": "",
+          "responsibilities": []
+        }
+      ],
+      "education": {
+        "dates": "2008-2013",
+        "faculty": "Civil Engineering",
+        "department": "Economics",
+        "university": "Belarussian National Technical University",
+        "location": "Minsk, Belarus"
+      },
+      "skills": [],
+      "languages": []
+    }
+  ]
+}

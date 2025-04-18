@@ -1,0 +1,16 @@
+<div class="flex flex-col content-center py-6">
+  @if (summary) {
+  <div class="summary-container main-text-color main-bg-color">
+    <div>
+      <div>
+        <div class="mb-2 text-lg font-bold">Summary:</div>
+        <p>{{ summary.description }}</p>
+      </div>
+      <div>
+        <div class="mb-2 text-md font-bold">Soft skills:</div>
+        <p>{{ summary.softSkills }}</p>
+      </div>
+    </div>
+  </div>
+  }
+</div>
