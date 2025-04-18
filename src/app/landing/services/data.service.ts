@@ -1,22 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
-import { ICv, IJob, IResponse } from '../types/cv.interface';
-import { delay, map, Observable } from 'rxjs';
+import { Injectable, signal } from '@angular/core';
+import {
+  ICv,
+  IJob,
+  IResponse,
+  IPersonalDetails,
+  ISummary,
+} from '../types/cv.interface';
+import { delay } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  // httpClient = inject(HttpClient);
-  // cvSig = signal<ICv[]>([]);
-  // apiBaseUrl = 'http://localhost:3004/cv';
-
-  // getCV(): void {
-  //   this.httpClient.get<ICv[]>(this.apiBaseUrl).subscribe((cv) => {
-  //     console.log(cv);
-  //     this.cvSig.set(cv);
-  //   });
-  // }
   private jsonUrl = 'assets/db.json';
   private dataSignal = signal<ICv[]>([]); //all data
 
@@ -35,6 +31,14 @@ export class DataService {
 
   get data() {
     return this.dataSignal;
+  }
+
+  getPersonalData(): IPersonalDetails {
+    return this.dataSignal()[0]?.personalDetails ?? null;
+  }
+
+  getSummary(): ISummary {
+    return this.dataSignal()[0]?.summary ?? null;
   }
 
   getWorkExperience(): IJob[] {

@@ -1,56 +1,16 @@
-<div class="flex flex-col items-center content-center py-6">
-  @for (cv of cvs; track cv.fullName) {
-  <div
-    class="flex flex-row items-center pt-1 px-2 border rounded-lg border-gray-300 bg-white"
-  >
-    <mat-icon
-      aria-hidden="false"
-      aria-label="Available"
-      fontIcon="circle"
-      class="mt-1 text-xs text-green-400"
-    ></mat-icon>
-    <div class="pb-1 text-sm">Available for Work</div>
-  </div>
-  <div class="mt-4 mb-2 text-3xl font-bold">{{ cv.fullName }}</div>
-  <div class="mb-2 text-md text-gray-500">{{ cv.title }}</div>
-  <div class="flex flex-row my-4">
-    <button mat-fab extended color="primary" class="mx-2">
-      <mat-icon>email</mat-icon>
-      Send email
-    </button>
-    <button mat-fab extended>
-      <mat-icon>download</mat-icon>
-      <a
-        href="./assets/Ilinchik Anna CV.pdf"
-        class="btn"
-        target="_blank"
-        download="Ilinchik Anna CV.pdf"
-      >
-        Download CV
-      </a>
-    </button>
-    <div class="example-flex-container">
-      <div class="example-button-container"></div>
+<div class="flex flex-col content-center py-6">
+  @if (summary) {
+  <div class="summary-container main-text-color main-bg-color">
+    <div>
+      <div>
+        <div class="mb-2 text-lg font-bold">Summary:</div>
+        <p>{{ summary.description }}</p>
+      </div>
+      <div>
+        <div class="mb-2 text-md font-bold">Soft skills:</div>
+        <p>{{ summary.softSkills }}</p>
+      </div>
     </div>
-  </div>
-
-  <div class="flex flex-row my-4">
-    <mat-card class="flex justify-center">
-      <img
-        mat-card-image
-        src="./assets/images/istockphoto-903044512-612x612 copy.jpg"
-      />
-    </mat-card>
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Summary:</mat-card-title>
-        <mat-card-subtitle>{{ cv.about }}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Soft skills:</p>
-        <p>{{ cv.softSkills }}</p>
-      </mat-card-content>
-    </mat-card>
   </div>
   }
 </div>

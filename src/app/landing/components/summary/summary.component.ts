@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MaterialModules } from '../../../shared/modules/material.module';
-import { ICv } from '../../types/cv.interface';
+import { ICv, ISummary } from '../../types/cv.interface';
 
 @Component({
   selector: 'app-summary',
@@ -10,5 +10,5 @@ import { ICv } from '../../types/cv.interface';
   styleUrl: './summary.component.scss',
 })
 export class SummaryComponent {
-  @Input() cvs: ICv[] = [];
+  @Input() summary?: ISummary;
 }

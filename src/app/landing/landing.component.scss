@@ -5,9 +5,32 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.responsive-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  margin: 1rem;
+  max-width: 1200px;
+  margin-inline: auto;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2rem 3rem;
+    gap: 2rem;
+  }
+}
+
+.experience-wrapper {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
