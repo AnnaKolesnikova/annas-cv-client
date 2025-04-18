@@ -1,22 +1,26 @@
-export interface ICv {
-  fullName: string;
-  title: string;
-  contactDetails: IContactDetails;
-  about: string;
-  softSkills: string;
+interface ICv {
+  personalDetails: IPersonalDetails;
+  summary: ISummary;
   workExperience: IJob[];
   education: IEducation;
   skills: string[];
   languages: string[];
 }
 
-interface IContactDetails {
+interface ISummary {
+  description: string;
+  softSkills: string;
+}
+
+interface IPersonalDetails {
+  fullName: string;
+  title: string;
   email: string;
   phone: string;
   location: string;
 }
 
-export interface IJob {
+interface IJob {
   dates: string;
   title: string;
   companyName: string;
@@ -38,6 +42,16 @@ interface IEducation {
   location: string;
 }
 
-export interface IResponse {
+interface IResponse {
   cvs: ICv[];
 }
+
+export {
+  ICv,
+  ISummary,
+  IPersonalDetails,
+  IJob,
+  IProject,
+  IEducation,
+  IResponse,
+};
