@@ -1,4 +1,13 @@
 .nav-wrapper {
   flex: 1;
-  padding: 1.5rem;
+}
+
+.mat-success {
+  background-color: #111d3d;
+  color: #fff;
+  border: 1px solid #bf87dc;
+}
+
+button:hover {
+  background: rgb(218, 201, 227, 0.2);
 }
