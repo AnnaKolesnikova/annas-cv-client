@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
 import {
   ICv,
@@ -13,19 +13,25 @@ import { delay } from 'rxjs';
   providedIn: 'root',
 })
 export class DataService {
-  private jsonUrl = 'assets/db.json';
-  private dataSignal = signal<ICv[]>([]); //all data
+  private jsonUrl =
+    'https://api.jsonbin.io/v3/b/68079ccc8a456b79668edb1b/latest';
+  private dataSignal = signal<ICv[]>([]);
 
   constructor(private http: HttpClient) {
     this.getData();
   }
 
   private getData(): void {
+    const headers = new HttpHeaders({
+      'X-Master-Key':
+        '$2a$10$Zxm8e6uJDV1t99Ki4i9OHOL54nJpTK4/G48QSx/CSHUhnk1XEAKtK',
+    });
+
     this.http
-      .get<IResponse>(this.jsonUrl)
+      .get<IResponse>(this.jsonUrl, { headers })
       .pipe(delay(2000))
       .subscribe((response: IResponse) => {
-        this.dataSignal.set(response.cvs);
+        this.dataSignal.set(response.record.cvs);
       });
   }
 
