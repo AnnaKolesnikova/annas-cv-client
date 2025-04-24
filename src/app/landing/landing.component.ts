@@ -5,6 +5,7 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import { MaterialModules } from '../shared/modules/material.module';
 import { NavComponent } from './components/nav/nav.component';
 import { IJob, IPersonalDetails, ISummary } from './types/cv.interface';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-landing',
@@ -12,6 +13,7 @@ import { IJob, IPersonalDetails, ISummary } from './types/cv.interface';
   imports: [
     ...MaterialModules,
     NavComponent,
+    FooterComponent,
     SummaryComponent,
     TimelineComponent,
   ],
