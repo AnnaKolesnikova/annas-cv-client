@@ -11,3 +11,44 @@
 button:hover {
   background: rgb(218, 201, 227, 0.2);
 }
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: #ccd6f6;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+
+  position: relative;
+  padding-left: 2rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 20px;
+    background-color: #8892b0;
+    transition: all 0.3s ease;
+  }
+
+  &:hover::before {
+    width: 40px;
+    background-color: #bf87dc;
+  }
+
+  &:hover {
+    padding-left: 3rem;
+    color: #bf87dc;
+  }
+}

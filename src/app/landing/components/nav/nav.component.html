@@ -28,9 +28,30 @@
     </div>
   </div>
   }
-  <ul>
-    <li>About</li>
-    <li>Experience</li>
-    <li>Projects</li>
-  </ul>
+  <nav class="nav-menu">
+    @for(link of links; track link) {
+    <a href="#about" class="nav-link"
+      >{{ link }}<span class="nav-line"></span
+    ></a>
+    }
+  </nav>
+
+  @if((isMobile | async) === false; as isMobile) {
+  <div class="social-icons">
+    <a
+      href="https://github.com/AnnaKolesnikova"
+      target="_blank"
+      class="icon-link"
+    >
+      <i class="fab fa-github"></i>
+    </a>
+    <a
+      href="https://linkedin.com/in/anna-ilinchik-18a574b6/"
+      target="_blank"
+      class="icon-link"
+    >
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+  }
 </div>
