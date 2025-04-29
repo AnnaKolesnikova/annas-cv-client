@@ -29,7 +29,6 @@ export class DataService {
 
     this.http
       .get<IResponse>(this.jsonUrl, { headers })
-      .pipe(delay(2000))
       .subscribe((response: IResponse) => {
         this.dataSignal.set(response.record.cvs);
       });
