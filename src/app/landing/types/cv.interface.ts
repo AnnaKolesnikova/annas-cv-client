@@ -43,7 +43,9 @@ interface IEducation {
 }
 
 interface IResponse {
-  cvs: ICv[];
+  record: {
+    cvs: ICv[];
+  };
 }
 
 export {

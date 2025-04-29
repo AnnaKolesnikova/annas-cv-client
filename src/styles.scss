@@ -31,3 +31,19 @@ body {
 .main-bg-color {
   background-color: #111d3d;
 }
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  a {
+    color: #8892b0;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #bf87dc;
+    }
+  }
+}
