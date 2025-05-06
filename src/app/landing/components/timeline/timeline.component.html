@@ -1,16 +1,16 @@
 <div id="experience" class="timeline">
-  @for(job of jobs; track job.dates) {
-  <div class="timeline-container mb-4 p-2">
-    <div class="text-base secondary-color">{{ job.dates }}</div>
-    <div class="timeline-content main-text-color">
-      <h2>{{ job.companyName }}</h2>
-      <div>{{ job.location }}</div>
-      <h4>{{ job.title }}</h4>
-      @for(project of job.projects; track project.description) {
-      <div class="font-bold">Description:</div>
-      <div>{{ project.description }}</div>
-      }
+  @for (job of jobs; track job.dates) {
+    <div class="timeline-container mb-4 p-2">
+      <div class="text-base secondary-color">{{ job.dates }}</div>
+      <div class="timeline-content main-text-color">
+        <h2>{{ job.companyName }}</h2>
+        <div>{{ job.location }}</div>
+        <h4>{{ job.title }}</h4>
+        @for (project of job.projects; track project.description) {
+          <div class="font-bold">Description:</div>
+          <div>{{ project.description }}</div>
+        }
+      </div>
     </div>
-  </div>
   }
 </div>
