@@ -1,11 +1,11 @@
 <div class="nav-wrapper main-text-color">
-  @if (personalData) {
+  @if (personalData()) {
     <div class="place-items-start">
       <div class="mb-2 text-4xl font-bold main-text-color">
-        {{ personalData.fullName }}
+        {{ personalData()?.fullName }}
       </div>
       <div class="mb-2 text-lg main-text-color">
-        {{ personalData.title }}
+        {{ personalData()?.title }}
       </div>
     </div>
 

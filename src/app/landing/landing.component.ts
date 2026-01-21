@@ -1,10 +1,10 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { SummaryComponent } from './components/summary/summary.component';
 import { DataService } from './services/data.service';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { MaterialModules } from '../shared/modules/material.module';
 import { NavComponent } from './components/nav/nav.component';
-import { IJob, IPersonalDetails, ISummary } from './types/cv.interface';
+import { Job, PersonalDetails, Summary } from './types/cv.interface';
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
@@ -21,22 +21,23 @@ import { FooterComponent } from './components/footer/footer.component';
   styleUrl: './landing.component.scss',
 })
 export class LandingComponent {
-  personalData!: IPersonalDetails;
-  summary!: ISummary;
-  workExperience!: IJob[];
+  private readonly dataService = inject(DataService);
 
-  loading = signal<boolean>(true);
+  public personalData!: PersonalDetails;
+  public summary!: Summary;
+  public workExperience!: Job[];
+  public loading = signal<boolean>(true);
+
+  private data = this.dataService.data;
 
   // dataSignal = this.dataService.data;
   // data = computed(() => this.dataSignal());
-
-  data = this.dataService.data;
 
   // personalData = this.dataService.getPersonalData();
   // summary = this.dataService.getSummary();
   // workExperience = this.dataService.getWorkExperience();
 
-  constructor(private dataService: DataService) {
+  constructor() {
     effect(() => this.initData(), { allowSignalWrites: true });
   }
 

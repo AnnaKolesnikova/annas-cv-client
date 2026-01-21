@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MaterialModules } from '../../../shared/modules/material.module';
 import { ViewportService } from '../../services/viewport.service';
 import { AsyncPipe } from '@angular/common';
@@ -11,6 +11,7 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  isMobile = this.viewportService.isMobile$;
-  constructor(private viewportService: ViewportService) {}
+  private readonly viewportService = inject(ViewportService);
+
+  public isMobile = this.viewportService.isMobile$;
 }

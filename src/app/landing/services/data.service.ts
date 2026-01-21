@@ -1,23 +1,23 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import {
-  ICv,
-  IJob,
-  IResponse,
-  IPersonalDetails,
-  ISummary,
+  Cv,
+  Job,
+  Response,
+  PersonalDetails,
+  Summary,
 } from '../types/cv.interface';
-import { delay } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
+  private readonly http = inject(HttpClient);
   private jsonUrl =
     'https://api.jsonbin.io/v3/b/68079ccc8a456b79668edb1b/latest';
-  private dataSignal = signal<ICv[]>([]);
+  private dataSignal = signal<Cv[]>([]);
 
-  constructor(private http: HttpClient) {
+  constructor() {
     this.getData();
   }
 
@@ -28,8 +28,8 @@ export class DataService {
     });
 
     this.http
-      .get<IResponse>(this.jsonUrl, { headers })
-      .subscribe((response: IResponse) => {
+      .get<Response>(this.jsonUrl, { headers })
+      .subscribe((response: Response) => {
         this.dataSignal.set(response.record.cvs);
       });
   }
@@ -38,15 +38,15 @@ export class DataService {
     return this.dataSignal;
   }
 
-  getPersonalData(): IPersonalDetails {
+  getPersonalData(): PersonalDetails {
     return this.dataSignal()[0]?.personalDetails ?? null;
   }
 
-  getSummary(): ISummary {
+  getSummary(): Summary {
     return this.dataSignal()[0]?.summary ?? null;
   }
 
-  getWorkExperience(): IJob[] {
+  getWorkExperience(): Job[] {
     return this.dataSignal().flatMap((cv) => cv.workExperience);
   }
 }

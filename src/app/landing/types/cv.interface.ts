@@ -1,18 +1,18 @@
-interface ICv {
-  personalDetails: IPersonalDetails;
-  summary: ISummary;
-  workExperience: IJob[];
-  education: IEducation;
+interface Cv {
+  personalDetails: PersonalDetails;
+  summary: Summary;
+  workExperience: Job[];
+  education: Education;
   skills: string[];
   languages: string[];
 }
 
-interface ISummary {
+interface Summary {
   description: string;
   softSkills: string;
 }
 
-interface IPersonalDetails {
+interface PersonalDetails {
   fullName: string;
   title: string;
   email: string;
@@ -20,21 +20,21 @@ interface IPersonalDetails {
   location: string;
 }
 
-interface IJob {
+interface Job {
   dates: string;
   title: string;
   companyName: string;
   location: string;
-  projects: IProject[];
+  projects: Project[];
 }
 
-interface IProject {
+interface Project {
   description: string;
   technologies: string[];
   responsibilities: string[];
 }
 
-interface IEducation {
+interface Education {
   dates: string;
   faculty: string;
   department: string;
@@ -42,18 +42,10 @@ interface IEducation {
   location: string;
 }
 
-interface IResponse {
+interface Response {
   record: {
-    cvs: ICv[];
+    cvs: Cv[];
   };
 }
 
-export {
-  ICv,
-  ISummary,
-  IPersonalDetails,
-  IJob,
-  IProject,
-  IEducation,
-  IResponse,
-};
+export { Cv, Summary, PersonalDetails, Job, Project, Education, Response };

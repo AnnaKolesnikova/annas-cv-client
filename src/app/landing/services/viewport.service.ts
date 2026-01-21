@@ -1,14 +1,16 @@
-import { Injectable } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { inject, Injectable } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, distinctUntilChanged } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class ViewportService {
+  private readonly breakpointObserver = inject(BreakpointObserver);
   private isMobileSubject = new BehaviorSubject<boolean>(false);
-  isMobile$: Observable<boolean> = this.isMobileSubject.asObservable();
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  public isMobile$: Observable<boolean> = this.isMobileSubject.asObservable();
+
+  constructor() {
     this.breakpointObserver
       .observe(['(max-width: 768px)'])
       .pipe(

@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { MaterialModules } from '../../../shared/modules/material.module';
-import { ICv, ISummary } from '../../types/cv.interface';
+import { Cv, Summary } from '../../types/cv.interface';
 
 @Component({
   selector: 'app-summary',
@@ -11,5 +11,5 @@ import { ICv, ISummary } from '../../types/cv.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SummaryComponent {
-  @Input() summary?: ISummary;
+  public summary = input<Summary>();
 }
