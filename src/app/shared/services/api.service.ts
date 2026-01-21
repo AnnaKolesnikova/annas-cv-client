@@ -1,16 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ICv } from '../../landing/types/cv.interface';
+import { Cv } from '../../landing/types/cv.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  httpClient = inject(HttpClient);
-  apiUrl = 'http://localhost:3004';
+  private readonly httpClient = inject(HttpClient);
+  private apiUrl = 'http://localhost:3004';
 
-  getAllCvDetails(): Observable<ICv[]> {
-    return this.httpClient.get<ICv[]>(`${this.apiUrl}/cv`);
+  getAllCvDetails(): Observable<Cv[]> {
+    return this.httpClient.get<Cv[]>(`${this.apiUrl}/cv`);
   }
 }

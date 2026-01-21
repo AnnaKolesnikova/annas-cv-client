@@ -1,6 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  input,
+} from '@angular/core';
 import { MaterialModules } from '../../../shared/modules/material.module';
-import { IPersonalDetails } from '../../types/cv.interface';
+import { PersonalDetails } from '../../types/cv.interface';
 import { AsyncPipe } from '@angular/common';
 import { ViewportService } from '../../services/viewport.service';
 
@@ -13,10 +18,9 @@ import { ViewportService } from '../../services/viewport.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavComponent {
-  @Input() personalData?: IPersonalDetails;
-  isMobile = this.viewportService.isMobile$;
+  private readonly viewportService = inject(ViewportService);
 
-  links = ['About', 'Experience', 'Projects'];
-
-  constructor(private viewportService: ViewportService) {}
+  public personalData = input<PersonalDetails>();
+  public isMobile = this.viewportService.isMobile$;
+  public links = ['About', 'Experience', 'Projects'];
 }
