@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IJob } from '../../types/cv.interface';
 
 @Component({
@@ -7,6 +7,7 @@ import { IJob } from '../../types/cv.interface';
   imports: [],
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TimelineComponent {
   @Input() jobs: IJob[] = [];

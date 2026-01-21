@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MaterialModules } from '../../../shared/modules/material.module';
 import { IPersonalDetails } from '../../types/cv.interface';
 import { AsyncPipe } from '@angular/common';
@@ -10,6 +10,7 @@ import { ViewportService } from '../../services/viewport.service';
   imports: [...MaterialModules, AsyncPipe],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavComponent {
   @Input() personalData?: IPersonalDetails;

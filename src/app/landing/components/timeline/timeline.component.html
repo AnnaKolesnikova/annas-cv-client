@@ -9,6 +9,9 @@
         @for (project of job.projects; track project.description) {
           <div class="font-bold">Description:</div>
           <div>{{ project.description }}</div>
+          @for (tech of project.technologies; track tech) {
+            <div>{{ tech }}</div>
+          }
         }
       </div>
     </div>
